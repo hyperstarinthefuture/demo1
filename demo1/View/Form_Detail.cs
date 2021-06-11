@@ -19,6 +19,7 @@ namespace demo1
         public Form_Detail(string mssv)
         {
             InitializeComponent();
+            AddToCbb();
             _MSSV = mssv;
             if (_MSSV != "") LoadData();
         }

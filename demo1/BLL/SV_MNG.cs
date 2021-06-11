@@ -55,18 +55,41 @@ namespace demo1.BLL
         public List<SVViewModel> GetAllSV(int idlop, string name)
         {
             List<SVViewModel> sVViewModels = new List<SVViewModel>();
-            foreach (SV sV in AppDBContext.SVs.AsNoTracking().ToList())
+            if (idlop == 0)
             {
-                LSH lSH = GetLSHByID(sV.ID_Lop);
-                SVViewModel sVViewModel = new SVViewModel
+                foreach (SV sV in AppDBContext.SVs.AsNoTracking().ToList())
                 {
-                    MSSV = sV.MSSV,
-                    HoTenSV = sV.TenSV,
-                    GioiTinh = sV.GioiTinh,
-                    NgaySinh = sV.NgaySinh,
-                    TenLop = lSH.TenLop
-                };
-            }
+                    LSH lSH = GetLSHByID(sV.ID_Lop);
+                    SVViewModel sVViewModel = new SVViewModel
+                    {
+                        MSSV = sV.MSSV,
+                        HoTenSV = sV.TenSV,
+                        GioiTinh = sV.GioiTinh,
+                        NgaySinh = sV.NgaySinh,
+                        TenLop = lSH.TenLop
+                    };
+                    sVViewModels.Add(sVViewModel);
+                }
+            }   
+            else
+            {
+                foreach (SV sV in AppDBContext.SVs.AsNoTracking().ToList())
+                {
+                    if (sV.ID_Lop == idlop)
+                    {
+                        LSH lSH = GetLSHByID(sV.ID_Lop);
+                        SVViewModel sVViewModel = new SVViewModel
+                        {
+                            MSSV = sV.MSSV,
+                            HoTenSV = sV.TenSV,
+                            GioiTinh = sV.GioiTinh,
+                            NgaySinh = sV.NgaySinh,
+                            TenLop = lSH.TenLop
+                        };
+                        sVViewModels.Add(sVViewModel);
+                    }   
+                }
+            }    
             return sVViewModels;
         }
         public SVViewModel GetSVByID(string mssv)
@@ -105,6 +128,7 @@ namespace demo1.BLL
             try
             {
                 AppDBContext.SVs.Add(sV);
+                AppDBContext.SaveChanges();
             }
             catch (Exception e)
             {

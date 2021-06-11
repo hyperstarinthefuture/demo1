@@ -128,7 +128,6 @@ namespace demo1
             // tb_MSSV
             // 
             this.tb_MSSV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_MSSV.Enabled = false;
             this.tb_MSSV.Location = new System.Drawing.Point(138, 60);
             this.tb_MSSV.Name = "tb_MSSV";
             this.tb_MSSV.Size = new System.Drawing.Size(208, 23);

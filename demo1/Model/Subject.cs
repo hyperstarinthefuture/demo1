@@ -10,7 +10,7 @@ namespace demo1.Model
     public class Subject
     {
         [Key]
-        [StringLength(4)]
+        [StringLength(10)]
         public string MaMonHoc { get; set; }
         [Required]
         public int SoTinChi { get; set; }

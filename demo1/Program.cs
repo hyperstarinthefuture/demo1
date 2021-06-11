@@ -18,7 +18,7 @@ namespace demo1
             Application.SetCompatibleTextRenderingDefault(false);
             AppDBContext appDBContext = new AppDBContext();
             appDBContext.Accounts.ToList();
-            Application.Run(new Form_MNG());
+            Application.Run(new Form_Login());
         }
     }
 }

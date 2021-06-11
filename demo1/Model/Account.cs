@@ -21,7 +21,7 @@ namespace demo1.Model
         public string Account_Phone { get; set; }
         [Required]
         [Column("Email")]
-        [StringLength(50)]
+        [StringLength(100)]
         public string Account_Email { get; set; }
     }
 }

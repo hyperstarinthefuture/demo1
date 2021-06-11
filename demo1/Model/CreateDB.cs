@@ -34,8 +34,8 @@ namespace demo1.Model
             });
             context.Accounts.AddRange(new Account[]
             {
-                new Account { Account_Username = "NVA", Account_Password = "1", Account_Phone = "0xxx xxx xxx", Account_Email = "NVA@gmail.com"},
-                new Account { Account_Username = "NVB", Account_Password = "1", Account_Phone = "0xxx xxx xxx", Account_Email = "NVB@gmail.com"}
+                new Account { Account_Username = "NVA", Account_Password = "1", Account_Phone = "0xxxxxxxxx", Account_Email = "NVA@gmail.com"},
+                new Account { Account_Username = "NVB", Account_Password = "1", Account_Phone = "0xxxxxxxxx", Account_Email = "NVB@gmail.com"}
             });
             context.Subjects.AddRange(new Subject[]
             {
